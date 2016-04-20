@@ -8,11 +8,13 @@ Template.tovar.helpers({
 Template.tovar.onRendered(function () {
     $('.colorSquare img').hide();
     $('.hoverImg').hide();
+    $('.sizeTovar').hide();
   $( '.tovar img' ).hover(
         function() {
             var imgSrc = $(this).attr('names');
             console.log(imgSrc);
             var imgName = $(this).attr('name');
+            $('#sizeTovar').fadeIn(500);
             $( this ).attr('src', imgName);
         
         },function() {
