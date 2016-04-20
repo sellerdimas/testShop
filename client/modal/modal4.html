@@ -1,0 +1,74 @@
+<template name="modal4">
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <div class="row">
+              
+                <img src="/closed1.png" class="close" alt="">
+                {{#if itemCountAll}}
+                <div class="col m10 offset-m1">
+                    <h5>Корзина</h5>
+                    <p class="cartTextP">Всего в вашей корзине товаров: {{itemCountAll}}</p>
+                </div>
+                    {{#each items}}
+
+<div class="col m12" id="blockTovarCart">
+
+            <div class="cartBlockImg">
+            <a href="http://localhost:3000/razdelnyy/{{productId}}" class="cartA"><img src="{{colorPhoto}}" class="responsive-img" alt=""></a>
+        </div>
+        <div class="cartBlockHeaderTovar">
+            <a href="http://localhost:3000/razdelnyy/{{productId}}" class="cartA">{{tovarHeader}} {{byst}} {{trysu}}</a>
+            <div>
+                <span><span class="cartBlockHeaderTovarText">Трусы:</span> {{trysu}}</span>
+
+            </div>
+             <div>
+                <span><span class="cartBlockHeaderTovarText">Бюст:</span>{{byst}}</span>
+                
+            </div>
+        </div>
+     
+        <div class="catPriceBlock">
+
+            <p class="cartBlockHeaderTovarText">Цена</p>
+ 
+             <span>{{price}}</span> грн
+         </div>
+         <div class="inputCartBlock">
+
+               
+<p class="cartBlockHeaderTovarText"> Кол-во</p>
+             <input type="text" class="quantTovar normInp center-align" value="{{itemCount}}">
+         </div>
+         
+     
+<a href="#" class="remove">Удалить</a>
+
+                    
+</div>
+ {{/each}}
+      <div class="modal4Next center-align">
+                        <span class="">Продолжить покупки</span> 
+                    </div>
+
+                    <div class="cartTotalBut">
+                    <p><span class="itogCart">Итого:</span> <span class="mainTotalSum">{{itemTotal}} <span class="mainSumGrn">грн</span></span></p>
+                         <div class="modal4Cart">
+
+                        <span class="">Оформить заказ</span>  
+                    </div>
+                    </div>
+                       
+{{else}}
+                <div class="col m10 offset-m1">
+                    <h5>Корзина пуста</h5>
+                </div>
+{{/if}}
+    
+                           
+               
+                
+            </div>
+        </div>
+    </div>
+</template>
